@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/vuelidate/validate-each">ValidateEach</router-link>
+    <router-link to="/vuelidate/vuelidate/nested-validations">Nested Validations</router-link>
   </div>
   <router-view/>
 </template>

@@ -1,18 +1,28 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <h1>Vue Learning</h1>
+    <p>A collection of pages and components to test out <a href="https://v3.vuejs.org/">VueJS patterns</a></p>
+
+    <ul>
+      <li v-for="(page, index) in pages" :key="index">
+        <a :href="page.path">{{ page.name }}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    import pages from "../pages";
+
+    export default {
+        name: 'Home',
+        data() {
+            return {
+                pages
+            }
+        }
+    }
 </script>
