@@ -6,8 +6,6 @@
 
 <script>
     import pages from "../pages";
-    console.log(pages);
-
     export default {
         name: 'AppNav',
         data() {
