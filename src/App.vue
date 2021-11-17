@@ -1,11 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/vuelidate/validate-each">ValidateEach</router-link>
-    <router-link to="/vuelidate/vuelidate/nested-validations">Nested Validations</router-link>
-  </div>
+  <app-nav></app-nav>
   <router-view/>
 </template>
+
+<script>
+
+    import pages from "./pages";
+    import AppNav from "./components/AppNav";
+
+    export default {
+        name: 'App',
+        components: {AppNav},
+        data() {
+            return {
+                pages
+            }
+        }
+    }
+</script>
 
 <style lang="scss">
 #app {
@@ -16,16 +28,4 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
