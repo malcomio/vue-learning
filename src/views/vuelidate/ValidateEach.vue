@@ -57,8 +57,6 @@
             return {rules, collection, v}
         },
         created() {
-            console.log(this);
-
             this.collection = [
                 {name: 'foo', elephants: 15},
                 {name: 'bar', elephants: 12}
