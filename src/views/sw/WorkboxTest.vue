@@ -1,13 +1,19 @@
 <template>
-  <form action="/api/form1" method="post">
-    <input name="name" />
-
-    <button type="submit">Submit</button>
-  </form>
+  <button @click="submit">Submit</button>
 </template>
 
 <script>
-  export default {
-      name: 'WorkboxTest'
-  }
+    export default {
+        name: 'WorkboxTest',
+        methods: {
+            submit() {
+                alert('hello');
+                fetch('https://example.com/api/test', {
+                    method: 'POST',
+                    body: 'hello from post'
+                })
+            }
+        }
+
+    }
 </script>

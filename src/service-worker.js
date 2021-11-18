@@ -16,7 +16,7 @@ registerRoute(
 );
 
 // Sync POSTs when we get network back.
-const bgSyncPlugin = new workbox.backgroundSync.Plugin('ehc-offline-queue', { // eslint-disable-line
+const bgSyncPlugin = new Plugin('ehc-offline-queue', { // eslint-disable-line
     maxRetentionTime: 24 * 60 // Retry for max of 24 Hours (specified in minutes)
 });
 
