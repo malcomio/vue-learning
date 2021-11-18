@@ -5,13 +5,15 @@ const pages = [
     },
     {
         name: 'ValidateEach',
-        path: '/vuelidate/validate-each',
-        component: '../views/vuelidate/ValidateEach.vue'
+        path: '/vuelidate/validate-each'
     },
     {
         path: '/vuelidate/nested-validations',
-        name: 'Nested Validations',
-        component: '@/src/views/vuelidate/NestedValidationsParent.vue'
+        name: 'Nested Validations'
+    },
+    {
+        path: '/sw/workbox-test',
+        name: 'Workbox Test'
     }
 ];
 
