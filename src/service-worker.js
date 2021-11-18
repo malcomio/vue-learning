@@ -1,17 +1,15 @@
-require('workbox-sw');
 import { Plugin } from 'workbox-background-sync';
 import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate, NetworkOnly } from 'workbox-strategies';
+import { NetworkFirst, NetworkOnly } from 'workbox-strategies';
 
 // Use with precache injection
 precacheAndRoute(self.__WB_MANIFEST);
 
-// Cache local API requests.
+// Cache local requests.
 registerRoute(
-    ({url}) => url.origin === self.location.origin &&
-        url.pathname.startsWith('/api/'),
-    new StaleWhileRevalidate(),
+    ({url}) => url.origin === self.location.origin,
+    new NetworkFirst(),
     'GET'
 );
 
@@ -20,9 +18,8 @@ const bgSyncPlugin = new Plugin('ehc-offline-queue', { // eslint-disable-line
     maxRetentionTime: 24 * 60 // Retry for max of 24 Hours (specified in minutes)
 });
 
-console.log(bgSyncPlugin);
 registerRoute(
-    /\/api\/.*/,
+    ({url}) => url.pathname.startsWith('/vue/api/'),
     new NetworkOnly({
         plugins: [bgSyncPlugin]
     }),

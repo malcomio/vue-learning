@@ -3,6 +3,7 @@ process.env.VUE_APP_VERSION = process.env.npm_package_version;
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
+    publicPath: '/vue/',
     // remove workbox from vue-pwa pipeline
     chainWebpack: config => {
       config.plugins.delete('workbox');
