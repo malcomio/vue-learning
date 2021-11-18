@@ -26,6 +26,7 @@
                 }).then(response => {
                     console.log(response.json());
                 }).catch(error => {
+                    alert('A network error occurred - your submission will be queued and sent later');
                     console.log(error);
                 });
             }
